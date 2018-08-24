@@ -88,6 +88,32 @@ int main()
 	user_card2.show_card();
 	cout << "CARD 3:\n";
 	user_card3.show_card();
+
+	cout << "\nWould you like to redraw your cards? (y/n): ";
+	char answer;
+	cin >> answer;
+	if (answer == 'y')
+	{
+		srand(time(NULL));			// Seed for the random generator.
+
+		int user_rand1 = rand() % 10 + 1;	//Three random numbers for the player card drawing.
+		int user_rand2 = rand() % 10 + 1;
+		int user_rand3 = rand() % 10 + 1;
+		Card user_card1;
+		Card user_card2;
+		Card user_card3;
+
+		user_card1 = add_card(user_rand1);
+		user_card2 = add_card(user_rand2);
+		user_card3 = add_card(user_rand3);
+
+		cout << "CARD 1:\n";
+		user_card1.show_card();
+		cout << "CARD 2:\n";
+		user_card2.show_card();
+		cout << "CARD 3:\n";
+		user_card3.show_card();
+	}
 	
 	return 0;  //There is still work due.
 }
